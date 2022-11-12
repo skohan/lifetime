@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Life Tracker</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+
+    <div id="app">
+        <div>
+            <div>
+                <h1  style="display: inline;">LifeTime Tracker</h1>
+                by <a href="https://skohan.github.io">skohan</a>
+            </div>
+            <p>If you were born on {{birthdate.toDateString()}}, number of weeks passed by and remaining for a 90 year life</p>
+        </div>
+
+        <div v-for="(year,i) in arr" class="row">
+            <div v-for="(week, j) in year" class="col">
+                <div v-bind:style="cellStyle">
+                    <div :style="{ 'background-color' : 'grey', height: 'inherit', width: 'inherit', opacity: week}"></div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/vue@2"></script>
+    <script src="main.js"></script>
+</body>
+</html>
